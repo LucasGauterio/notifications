@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  notifications:
+    image: notifications-api
+    restart: on-failure
+    ports:
+      - 8081:8081
+    network_mode: host
+  preferences:
+    image: notifications-preferences
+    restart: on-failure
+    ports:
+      - 8082:8082
+    network_mode: host
+  template:
+    image: notifications-template
+    restart: on-failure
+    ports:
+      - 8083:8083
+    network_mode: host
+  channel-email:
+    image: notifications-channel-email
+    restart: on-failure
+    ports:
+      - 8084:8084
+    network_mode: host

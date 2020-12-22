@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: corp-notifications-preferences
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      config:
+        enabled: true
+        prefix: corp-notifications
+        default-context: 'preferences'
+        format: KEY_VALUE
+        watch:
+          enabled: true
+          delay: 600000
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+      group-id: corp-notifications-preferences
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+      group-id: corp-notifications-preferences
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

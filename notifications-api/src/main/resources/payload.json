@@ -1,0 +1,61 @@
+{
+  "notification" : {
+    "sender_id" : "12345",
+    "recipient_id" : "654789",
+    "context" : {
+      "company":"cvc",
+      "brand":"cvc",
+      "channel":"web",
+      "site":"bra"
+    },
+    "type" : "transactional",
+    "template" : "billed",
+    "data" : {
+      "orderId":"12345678",
+      "payment": [
+        {
+          "type":"credit",
+          "installment": {
+            "quantity":"2",
+            "value":"500"
+          },
+          "total_value":"1000"
+        }
+      ]
+    },
+    "attachments": [{
+      "type": "application/pdf",
+      "name": "receipt-102011111111",
+      "content": "file encoded base64"
+    }]
+  },
+  "configuration" : {
+    "channels":[
+      {
+        "type" : "email",
+        "from" : "",
+        "to" : "",
+        "cc" : "",
+        "cco" : "",
+        "subject" : ""
+      },
+      {
+        "type" : "webpush",
+        "from" : "",
+        "to" : ""
+      },
+      {
+        "type" : "sms",
+        "from" : "",
+        "to" : ""
+      },
+      {
+        "type" : "whatsapp",
+        "from" : "",
+        "to" : ""
+      }
+    ],
+    "tags" : ["tag1","tag2","tag3"]
+  },
+  "content" : "<html><body><table><thead><tr><th>E-MAIL</th></tr></thead><tbody><tr><td>Olá Fulano,<br>este é um e-mail de teste</td></tr><tr><td>Atenciosamente,<br>Lucas Gautério</td></tr></tbody></table></body></html>"
+}

@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - env
+          - health
+          - info
+          - refresh
+
+kafka:
+  bootstrap-servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
