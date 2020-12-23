@@ -2,7 +2,7 @@ package com.cvccorp.notifications.notifications.preferences.config;
 
 public class Constants {
 
-    public static final String GROUP_ID = "corp-notifications-configuration";
+    public static final String GROUP_ID = "corp-notifications-preferences";
 
     public static final String TOPIC = "notifications";
 
